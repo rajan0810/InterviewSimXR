@@ -74,7 +74,7 @@ public class HashcodeManager : MonoBehaviour
                 }
 
                 // Keep canvas active for interview (don't hide it)
-                // canvas.SetActive(false); // Commented out to keep interview UI visible
+                 canvas.SetActive(false); // Commented out to keep interview UI visible
             }
             else
             {

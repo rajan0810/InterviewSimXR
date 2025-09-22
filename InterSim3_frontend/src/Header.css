@@ -1,0 +1,118 @@
+/* Dynamic Header */
+.header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  transition: all 0.3s ease;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  position: relative;
+}
+
+.logo h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.logo h1:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.4));
+}
+
+.logo h1:hover::before {
+  opacity: 0.3;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.nav-desktop {
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #4b5563;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+  text-shadow: 0 0 5px rgba(37, 99, 235, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+  .nav-desktop {
+    display: none;
+  }
+}

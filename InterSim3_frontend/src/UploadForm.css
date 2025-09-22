@@ -1,0 +1,111 @@
+/* Dynamic Upload Form */
+.upload-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2), 0 0 25px rgba(37, 99, 235, 0.15);
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 30px rgba(37, 99, 235, 0.25);
+}
+
+.upload-card h2 {
+  font-size: 2rem;
+  color: #2563eb;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1f2937;
+  transition: all 0.3s ease;
+  background-color: rgba(248, 250, 252, 0.8);
+  box-shadow: inset 0 2px 4px rgba(59, 130, 246, 0.1);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.drop-area {
+  border: 2px dashed rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  position: relative;
+  background-color: rgba(248, 250, 252, 0.8);
+}
+
+.drop-area.dragging {
+  border-color: #2563eb;
+  background-color: rgba(219, 234, 254, 0.8);
+}
+
+.file-input {
+  display: none;
+}
+
+.drop-area label {
+  font-size: 1rem;
+  color: #374151;
+  display: block;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5), 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

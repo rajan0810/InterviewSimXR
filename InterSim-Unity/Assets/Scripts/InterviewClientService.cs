@@ -104,9 +104,10 @@ namespace InterviewClient.Services
                 yield break; // exit coroutine early
             }
 
-            // Prepare JSON body
+            // ✅ Prepare JSON body with both session_id and access_code
             var json = new JSONObject();
             json["session_id"] = sessionId;
+            json["access_code"] = sessionId;   // same as session_id
             json["audio_data"] = audioBase64;
 
             byte[] bodyRaw = Encoding.UTF8.GetBytes(json.ToString());
@@ -117,11 +118,11 @@ namespace InterviewClient.Services
                 webRequest.downloadHandler = new DownloadHandlerBuffer();
                 webRequest.SetRequestHeader("Content-Type", "application/json");
 
-                // ✅ Safe: yield return outside try/catch
                 yield return webRequest.SendWebRequest();
 
                 if (webRequest.result == UnityWebRequest.Result.Success)
                 {
+                    Debug.Log($"[Interview Service] Response: {webRequest.downloadHandler.text}");
                     try
                     {
                         var responseJson = JSON.Parse(webRequest.downloadHandler.text);

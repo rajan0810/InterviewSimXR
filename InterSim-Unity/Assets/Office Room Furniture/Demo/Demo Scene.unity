@@ -1495,7 +1495,7 @@ PrefabInstance:
     - target: {fileID: 9058597307857242095, guid: f39159c9b0dbf47dabcc3a7fbf07f2de,
         type: 3}
       propertyPath: m_Text
-      value: START
+      value: STOP RECORDING
       objectReference: {fileID: 0}
     - target: {fileID: 9058597307857242095, guid: f39159c9b0dbf47dabcc3a7fbf07f2de,
         type: 3}
